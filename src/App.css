@@ -41,9 +41,6 @@ button, input, select, textarea { font: inherit; }
   width: 138px;
   height: 27px;
 }
-.brand-mark,
-.brand-name,
-.brand-name span { display: none; }
 .nav { display: flex; align-items: center; gap: 36px; font-size: 12px; font-weight: 600; }
 .nav > a:not(.nav-cta):hover { color: var(--red); }
 .nav-cta { background: var(--green); color: white; padding: 14px 19px; }
@@ -246,8 +243,6 @@ h1 em, h2 em { font-family: "Playfair Display", serif; font-weight: 600; }
   .menu-toggle span { display: block; width: 23px; height: 2px; background: var(--green); }
   .nav { display: none; position: absolute; top: 70px; left: 0; right: 0; padding: 22px 6% 28px; background: var(--cream); flex-direction: column; align-items: stretch; gap: 20px; box-shadow: 0 12px 18px #0001; }
   .nav-open { display: flex; }
-  .nav-cta { text-align: center; }
-  .hero { min-height: 650px; }
   .hero-image { background-position: 58% center; }
   .hero-overlay { background: linear-gradient(90deg, rgba(8,31,25,.88), rgba(8,31,25,.43)); }
   .hero-content { width: 86%; margin-left: 7%; padding: 80px 0 100px; }
@@ -280,4 +275,6 @@ h1 em, h2 em { font-family: "Playfair Display", serif; font-weight: 600; }
   .quote-form { padding: 25px 18px; }
   .form-row { grid-template-columns: 1fr; gap: 0; }
   .footer { grid-template-columns: 1fr 1fr; padding: 28px 7%; }
-  
+  .footer p { text-align: right; }
+  .back-top { grid-column: 1 / -1; justify-self: start; }
+}
