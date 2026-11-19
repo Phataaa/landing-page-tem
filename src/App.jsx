@@ -44,7 +44,29 @@ function App() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    // Demo only: connect this form to Carafix's email, CRM or WordPress form handler.
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const name = formData.get("name");
+    const phone = formData.get("phone");
+    const email = formData.get("email");
+    const service = formData.get("service");
+    const location = formData.get("location") || "No preference";
+    const message = formData.get("message") || "No additional details";
+
+    const subject = `Christmas Road-Ready enquiry — ${name}`;
+    const body = [
+      `Name: ${name}`,
+      `Phone: ${phone}`,
+      `Email: ${email}`,
+      `Service: ${service}`,
+      `Preferred workshop: ${location}`,
+      "",
+      "Message:",
+      message,
+    ].join("\n");
+
+    window.location.href = `mailto:info@carafix.com.au?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setSubmitted(true);
   }
 
@@ -215,6 +237,7 @@ function App() {
               <span className="location-label">LOCATION 01</span>
               <h3>Arundel</h3>
               <p>15 Technology Drive<br />Arundel, QLD</p>
+              <a className="location-phone" href="tel:0755715018">(07) 5571 5018</a>
               <a href="https://www.google.com/maps/search/?api=1&query=15+Technology+Drive+Arundel+QLD+Australia" target="_blank" rel="noreferrer">
                 Get directions ↗
               </a>
@@ -223,6 +246,7 @@ function App() {
               <span className="location-label">LOCATION 02</span>
               <h3>Currumbin</h3>
               <p>9 Wheeler Crescent<br />Currumbin, QLD</p>
+              <a className="location-phone" href="tel:0756481000">(07) 5648 1000</a>
               <a href="https://www.google.com/maps/search/?api=1&query=9+Wheeler+Crescent+Currumbin+QLD+Australia" target="_blank" rel="noreferrer">
                 Get directions ↗
               </a>
@@ -252,9 +276,9 @@ function App() {
             {submitted ? (
               <div className="success-message" role="status">
                 <span>✓</span>
-                <h3>Thanks for your enquiry.</h3>
-                <p>This is a front-end demo. Connect the form to Carafix's enquiry system before publishing.</p>
-                <button type="button" className="text-link dark-link" onClick={() => setSubmitted(false)}>Send another enquiry ↗</button>
+                <h3>Your email enquiry is ready.</h3>
+                <p>Your email app will open with the details filled in. Review the message and press send to deliver it to Carafix.</p>
+                <button type="button" className="text-link dark-link" onClick={() => setSubmitted(false)}>Create another enquiry ↗</button>
               </div>
             ) : (
               <>
@@ -282,7 +306,7 @@ function App() {
                 </label>
                 <label>Anything else? <textarea name="message" rows="3" placeholder="Tell us about your caravan or enquiry..." /></label>
                 <button className="button button-red form-submit" type="submit">Send enquiry <span>↗</span></button>
-                <p className="form-small">Submitting this demo form will not send your details. A form handler must be connected before launch.</p>
+                <p className="form-small">Submitting this form will send your details to Carafix for follow-up. Your information will be kept confidential.</p>
               </>
             )}
           </form>

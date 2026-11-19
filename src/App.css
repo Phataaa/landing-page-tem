@@ -183,6 +183,16 @@ h1 em, h2 em { font-family: "Playfair Display", serif; font-weight: 600; }
 .location-card h3 { font-family: "Playfair Display", serif; font-size: 27px; margin: 23px 0 10px; }
 .location-card p { color: rgba(255,255,255,.7); font-size: 11px; line-height: 1.8; }
 .location-card a { display: inline-block; margin-top: 10px; color: var(--gold); font-size: 10px; font-weight: 700; border-bottom: 1px solid var(--gold); padding-bottom: 5px; }
+.location-phone {
+  display: block;
+  width: fit-content;
+  margin: 8px 0 12px;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+}
+.location-phone:hover { color: var(--gold); }
+.location-card a[href*="google.com"] { margin-top: 0; }
 .contact { display: grid; grid-template-columns: .9fr 1.1fr; gap: 10%; }
 .contact h2 { font-size: clamp(47px, 5.2vw, 68px); }
 .contact-copy > p { max-width: 390px; }
