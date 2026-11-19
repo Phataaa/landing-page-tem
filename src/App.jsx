@@ -190,7 +190,7 @@ function App() {
         </section>
 
         <section className="feature">
-          <div className="feature-photo" role="img" aria-label="Caravan ready for a summer road trip" />
+          <div className="feature-photo" role="img" aria-label="Exterior of the real Carafix Arundel workshop" />
           <div className="feature-content">
             <div className="eyebrow light"><span /> YOUR HOLIDAY, YOUR WAY</div>
             <h2>Take the scenic<br /><em>route.</em></h2>
@@ -235,6 +235,7 @@ function App() {
           <div className="location-cards">
             <article className="location-card">
               <span className="location-label">LOCATION 01</span>
+              <img className="location-photo" src="/Carafix-Arundel.jpg" alt="Carafix Arundel workshop" />
               <h3>Arundel</h3>
               <p>15 Technology Drive<br />Arundel, QLD</p>
               <a className="location-phone" href="tel:0755715018">(07) 5571 5018</a>
@@ -244,6 +245,7 @@ function App() {
             </article>
             <article className="location-card">
               <span className="location-label">LOCATION 02</span>
+              <img className="location-photo" src="/Carafix-Currumbin.png" alt="Carafix Currumbin workshop" />
               <h3>Currumbin</h3>
               <p>9 Wheeler Crescent<br />Currumbin, QLD</p>
               <a className="location-phone" href="tel:0756481000">(07) 5648 1000</a>
